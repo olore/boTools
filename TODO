@@ -4,6 +4,7 @@ Extension stuff
 * Separate out scripts that run in inspectedWindow into their own file
   * Figure out how pass messages back & forth
 * Incorporate all snippets from https://github.com/bahmutov/code-snippets
+* UI - thought, design, etc
 * Put into Chrome store
 
 Tool/Script stuff
