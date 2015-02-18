@@ -1,0 +1,10 @@
+Things to do
+
+Extension stuff
+* Separate out scripts that run in inspectedWindow into their own file
+  * Figure out how pass messages back & forth
+* Incorporate all snippets from https://github.com/bahmutov/code-snippets
+* Put into Chrome store
+
+Tool/Script stuff
+* Display hierarchy of scopes/watchers
