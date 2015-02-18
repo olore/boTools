@@ -92,12 +92,12 @@ function setup() {
         div = document.createElement('div');
 
     // create button
-    btn.setAttribute('class', scriptObj.buttonSelector);
+    btn.setAttribute('class', scriptObj.buttonSelector.replace('.', ''));
     btn.innerHTML = scriptObj.name;
     document.body.appendChild(btn);
 
     // create area for output
-    div.setAttribute('class', scriptObj.outputSelector);
+    div.setAttribute('class', scriptObj.outputSelector.replace('.', ''));
     document.body.appendChild(div);
 
     // setup listeners
