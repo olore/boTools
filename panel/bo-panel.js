@@ -1,4 +1,4 @@
-(function() {
+(function(_) {
 
 var scripts = { };
 
@@ -85,10 +85,8 @@ function runFunction(fn, cb) {
 
 
 function setup() {
-  // Stupid forEach can't iterate on an object
-  ['countScopes', 'countWatchers'].forEach(function(scriptName) {
-    var scriptObj = scripts[scriptName],
-        btn = document.createElement('button'),
+  _.each(scripts, function(scriptObj) {
+    var btn = document.createElement('button'),
         div = document.createElement('div');
 
     // create button
@@ -109,6 +107,4 @@ function setup() {
 window.addEventListener('load', setup);
 
 
-})();
-
-
+})(_);
