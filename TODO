@@ -1,11 +1,12 @@
 Things to do
 
 Extension stuff
-* Separate out scripts that run in inspectedWindow into their own file
-  * Figure out how pass messages back & forth
-* Incorporate all snippets from https://github.com/bahmutov/code-snippets
+* Figure out how pass messages back & forth
+* Incorporate more snippets from https://github.com/bahmutov/code-snippets
 * UI - thought, design, etc
 * Put into Chrome store
 
 Tool/Script stuff
 * Display hierarchy of scopes/watchers
+* Visualizations/Graphs
+* Make it easy to add new scripts

@@ -1,7 +1,7 @@
 (function(scripts) {
 
 scripts.countWatchers = {
-  name: 'My Count Watchers',
+  name: 'Count Watchers',
   output: 'There are <b>{{output}}</b> watchers on the page',
   outputSelector: '.count-watchers-output',
   buttonSelector: '.count-watchers',
