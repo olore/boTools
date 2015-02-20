@@ -1,4 +1,4 @@
-(function(_, scripts) {
+(function($, _, scripts) {
 
 function runScript(obj) {
   runFunction(obj.fn, function(output) {
@@ -13,13 +13,13 @@ function runFunction(fn, cb) {
 
 function setup() {
   _.each(scripts, function(scriptObj) {
-    var btn = document.createElement('button'),
+    var btn = $('button'),
         div = document.createElement('div');
 
     // create button
-    btn.setAttribute('class', scriptObj.buttonSelector.replace('.', ''));
-    btn.innerHTML = scriptObj.name;
-    document.body.appendChild(btn);
+    btn.attr('class', scriptObj.buttonSelector.replace('.', ''));
+    btn.html(scriptObj.name);
+    $('body').append(btn);
 
     var checkbox = document.createElement('input');
     checkbox.setAttribute('type', 'checkbox');
@@ -27,7 +27,7 @@ function setup() {
     // fire up a setInterval when the checkbox is selected
     checkbox.addEventListener('change', function(foo) {
       if (this.checked) {
-        var delay = parseInt(document.querySelector('.delay-' + scriptObj.buttonSelector.replace('.', '')).value, 10)
+        var delay = parseInt(document.querySelector('.delay-' + scriptObj.buttonSelector.replace('.', '')).value, 10);
 
         scriptObj.interval = setInterval(runScript.bind(null, scriptObj),
           delay
@@ -44,9 +44,9 @@ function setup() {
     input.setAttribute('class', 'delay-' + scriptObj.buttonSelector.replace('.', ''));
     input.value = 5000;
 
-    document.body.appendChild(document.createElement('br'));
-    document.body.appendChild(checkbox);
-    document.body.appendChild(input);
+    $('body').append(document.createElement('br'));
+    $('body').append(checkbox);
+    $('body').append(input);
 
     // create area for output
     div.setAttribute('class', scriptObj.outputSelector.replace('.', ''));
@@ -57,10 +57,10 @@ function setup() {
     document.body.appendChild(document.createElement('br'));
 
     // setup listeners
-    document.querySelector(scriptObj.buttonSelector).addEventListener('click', runScript.bind(null, scriptObj));
+    btn.on('click', runScript.bind(null, scriptObj));
   });
 }
 
 window.addEventListener('load', setup);
 
-})(_, scripts);
+})($, _, scripts);
