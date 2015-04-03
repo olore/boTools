@@ -1,0 +1,34 @@
+body {
+  padding-top: 10px;
+}
+
+body *:focus {
+  outline: none;
+}
+
+.container {
+  width: 400px;
+  margin: 0;
+}
+
+.panel-heading {
+  padding: 5px 10px;
+}
+
+.panel-body {
+  padding: 12px 10px 0;
+}
+
+.input-group[class*=col-] {
+  float: left;
+}
+
+button {
+  width: 128px;
+  margin-left: 13px;
+}
+
+.count-output {
+  padding: 7px 0;
+  line-height: 0.7;
+}

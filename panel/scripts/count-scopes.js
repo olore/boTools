@@ -1,10 +1,9 @@
 (function(scripts) {
 
 scripts.countScopes = {
-  name: 'Count Scopes',
+  label: 'scopes',
   output: 'There are <b>{{output}}</b> scopes on the page',
-  outputSelector: '.count-scopes-output',
-  buttonSelector: '.count-scopes',
+  checkboxSelector: '.scopes-checkbox',
 
   fn: function() {
     var i, data, scope,

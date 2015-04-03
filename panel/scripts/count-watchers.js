@@ -1,10 +1,9 @@
 (function(scripts) {
 
 scripts.countWatchers = {
-  name: 'Count Watchers',
+  label: 'watchers',
   output: 'There are <b>{{output}}</b> watchers on the page',
-  outputSelector: '.count-watchers-output',
-  buttonSelector: '.count-watchers',
+  checkboxSelector: '.watchers-checkbox',
 
   fn: function() {
     var i, data, scope,
