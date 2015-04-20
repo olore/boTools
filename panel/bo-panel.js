@@ -2,7 +2,7 @@
 
 function runScript(obj) {
   runFunction(obj.fn, function(output) {
-    document.querySelector(obj.outputSelector).innerHTML = obj.output.replace('{{output}}', output);
+    document.querySelector('.count-' + obj.label + '-output').innerHTML = obj.output.replace('{{output}}', output);
   });
 }
 
@@ -13,21 +13,11 @@ function runFunction(fn, cb) {
 
 function setup() {
   _.each(scripts, function(scriptObj) {
-    var btn = document.createElement('button'),
-        div = document.createElement('div');
-
-    // create button
-    btn.setAttribute('class', scriptObj.buttonSelector.replace('.', ''));
-    btn.innerHTML = scriptObj.name;
-    document.body.appendChild(btn);
-
-    var checkbox = document.createElement('input');
-    checkbox.setAttribute('type', 'checkbox');
 
     // fire up a setInterval when the checkbox is selected
-    checkbox.addEventListener('change', function(foo) {
+    document.querySelector(scriptObj.checkboxSelector).addEventListener('change', function() {
       if (this.checked) {
-        var delay = parseInt(document.querySelector('.delay-' + scriptObj.buttonSelector.replace('.', '')).value, 10)
+        var delay = parseInt(document.querySelector('.delay-count-' + scriptObj.label).value, 10);
 
         scriptObj.interval = setInterval(runScript.bind(null, scriptObj),
           delay
@@ -39,25 +29,8 @@ function setup() {
 
     });
 
-    var input = document.createElement('input');
-    input.setAttribute('type', 'text');
-    input.setAttribute('class', 'delay-' + scriptObj.buttonSelector.replace('.', ''));
-    input.value = 5000;
-
-    document.body.appendChild(document.createElement('br'));
-    document.body.appendChild(checkbox);
-    document.body.appendChild(input);
-
-    // create area for output
-    div.setAttribute('class', scriptObj.outputSelector.replace('.', ''));
-    document.body.appendChild(div);
-
-    // make some space
-    document.body.appendChild(document.createElement('br'));
-    document.body.appendChild(document.createElement('br'));
-
     // setup listeners
-    document.querySelector(scriptObj.buttonSelector).addEventListener('click', runScript.bind(null, scriptObj));
+    document.querySelector('.count-' + scriptObj.label).addEventListener('click', runScript.bind(null, scriptObj));
   });
 }
 

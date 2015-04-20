@@ -1,7 +1,61 @@
 <html>
 <head>
+  <link href="lib/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bo-tools.css" rel="stylesheet">
 </head>
 <body>
+
+  <div class="container">
+
+    <!-- watchers -->
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Watchers</h3>
+          </div>
+          <div class="panel-body">
+            <div class="col-xs-7 input-group">
+              <span class="input-group-addon">
+                <input type="checkbox" class="watchers-checkbox">
+              </span>
+              <input type="text"
+                     class="form-control delay-count-watchers"
+                     placeholder="Enter milliseconds"
+                     value="5000">
+            </div>
+            <button class="btn btn-default count-watchers">Count Watchers</button>
+            <div class="text-info count-output count-watchers-output"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- scopes -->
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Scopes</h3>
+          </div>
+          <div class="panel-body">
+            <div class="col-xs-7 input-group">
+              <span class="input-group-addon">
+                <input type="checkbox" class="scopes-checkbox">
+              </span>
+              <input type="text"
+                class="form-control delay-count-scopes"
+                placeholder="Enter milliseconds"
+                value="5000">
+            </div>
+            <button class="btn btn-default count-scopes">Count Scopes</button>
+            <div class="text-info count-output count-scopes-output"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 
   <script src="lodash.underscore.min.js"></script>
   <script src="init.js"></script>
